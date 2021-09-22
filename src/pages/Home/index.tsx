@@ -48,7 +48,7 @@ export function Home() {
         if( idItem ) {
             const position = Object.entries(list).find(([key, itemLista]) => itemLista.id === idItem);
 
-            // position é o array todo ja
+            // position é o array todo jas
         }
     }
 
