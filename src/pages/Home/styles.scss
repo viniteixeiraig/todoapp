@@ -1,0 +1,122 @@
+* { 
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #2F3437;
+}
+
+#page-home {
+    display: flex;
+    justify-content: stretch;
+    align-items: center;
+
+    height: 100vh;
+
+    aside {
+        flex: 6;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: stretch;
+            align-items: center;
+
+            width: 40%;
+            
+            padding: 50px 50px;
+
+            background-color: #EBEBEB;
+
+            gap: 20px;
+
+            border-radius: 8px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+
+            h1 {
+                font-size: 25px;
+                margin: 0px;
+                padding: 0px;
+                color: #2F3437;
+            }
+
+            input {
+                width: 100%;
+                height: 40px;
+                padding-left: 20px;
+
+                border: none;
+                border-radius: 8px;
+                box-shadow: 0 2px 12px rgba(0, 0, 0, 0.02);
+
+                font-size: 15px;
+            }
+
+            button {
+                width: 100%;
+                height: 40px;
+
+                border: none;
+                background-color: #2EAADC;
+                color: #EBEBEB;
+                font-size: 16px;
+                font-weight: 600;
+                border-radius: 8px;
+
+                cursor: pointer;
+
+                transition: filter 0.2s;
+
+                &:hover {
+                    filter: brightness(0.9);
+                }
+            }
+        }
+    }
+
+    main {
+        flex: 6;
+
+        color: #EBEBEB;
+
+        input {
+            padding: 10px;
+        }
+
+        ul {
+            align-items: center;
+
+            ol {
+                label {
+                    padding: 10px;
+                    padding-right: 20px;
+                    font-size: 18px;
+                }
+
+                button {
+                    vertical-align: middle;
+
+                    font-size: 22px;
+                    background-color: transparent;
+                    color: #EBEBEB;
+                    border: none;
+
+                    transition: filter 0.2s;
+
+                    cursor: pointer;
+
+                    &:hover {
+                        filter: brightness(0.7);
+                    }
+                }
+            }
+
+            
+        }
+    }
+}
