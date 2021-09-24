@@ -6,6 +6,11 @@ body {
     background-color: #2F3437;
 }
 
+.checked{
+    text-decoration: line-through;
+    color: #a5a5a5;
+}
+
 #page-home {
     display: flex;
     justify-content: stretch;
@@ -96,6 +101,7 @@ body {
                     padding: 10px;
                     padding-right: 20px;
                     font-size: 18px;
+                    width: 300px!important;
                 }
 
                 button {

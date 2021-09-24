@@ -2,6 +2,8 @@ import { FormEvent, useState, useEffect } from 'react'
 
 import toast, { Toaster } from 'react-hot-toast';
 
+import update from 'react-addons-update';
+
 import { MdDelete } from 'react-icons/md';
 
 
@@ -20,7 +22,7 @@ export function Home() {
     const [ list, setList ] = useState<listType[]>([]);
 
     useEffect(() => {
-        console.log(list)
+        
     }, [ list ])
 
     async function handleAddToList(event: FormEvent) {
@@ -46,9 +48,28 @@ export function Home() {
     // Função para checar item
     async function handleCheckItem(idItem : number) {
         if( idItem ) {
-            const position = Object.entries(list).find(([key, itemLista]) => itemLista.id === idItem);
 
-            // position é o array todo jas
+            const updatedTodos = [...list].map((item) => {
+                if(item.id === idItem) {
+                    item.isChecked = !item.isChecked;
+                }
+
+                return item;
+            })
+
+            setList(updatedTodos)
+
+            toast.success("Item atualizado!");
+
+        }
+    }
+
+    // Função para deletar item
+    async function handleDeleteItem(idItem : number) {
+        if( idItem ) {
+            const deletedTodos = [...list].filter((item) => item.id !== idItem)
+
+            setList(deletedTodos)
         }
     }
 
@@ -79,11 +100,10 @@ export function Home() {
                             <ol>
                                 <input type="checkbox" defaultChecked={campo.isChecked} onClick={() => handleCheckItem(campo.id)} />
                                 <label className={`${campo.isChecked ? 'checked' : ''}`}>{campo.value}</label>
-                                <button><MdDelete /></button>
+                                { campo.isChecked === true ? <button onClick={() => handleDeleteItem(campo.id)}><MdDelete /></button> : ''}
                             </ol>
                         )
-                    })
-                    }
+                    }) }
                 </ul>
             </main>
         </div>
